@@ -1,0 +1,160 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Trang-1" id="uuD-ivPOcjiDMqpTNBjw">
+    <mxGraphModel dx="1414" dy="777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" plantUmlData="{&#xa;  &quot;data&quot;: &quot;@startuml Refund_UseCase_Diagram\nleft to right direction\nskinparam packageStyle rectangle\nskinparam actorStyle awesome\n\nactor \&quot;Khách hàng\&quot; as KH\nactor \&quot;Shipper\&quot; as SHIP\nactor \&quot;NV kiểm định kho\&quot; as QC\nactor \&quot;NV CSKH / Kế toán\&quot; as CSKH\n\nrectangle \&quot;Phân hệ Đổi trả &amp; Hoàn tiền (Refund)\&quot; {\n  usecase \&quot;UC1: Tạo yêu cầu\\nhoàn tiền\&quot; as UC1\n  usecase \&quot;UC2: Kiểm tra điều kiện\\nđổi trả\&quot; as UC2\n  usecase \&quot;UC3: Từ chối\\nyêu cầu\&quot; as UC3\n  usecase \&quot;UC4: Điều phối\\nthu hồi hàng\&quot; as UC4\n  usecase \&quot;UC5: Kiểm định\\nhàng hoàn kho\&quot; as UC5\n  usecase \&quot;UC6: Xử lý tranh chấp\\n(hàng giả / hư hỏng)\&quot; as UC6\n  usecase \&quot;UC7: Xử lý\\nhoàn tiền\&quot; as UC7\n}\n\nKH --&gt; UC1\nSHIP --&gt; UC4\nQC --&gt; UC5\nCSKH --&gt; UC3\nCSKH --&gt; UC7\n\nUC1 .&gt; UC2 : &lt;&lt;include&gt;&gt;\nUC3 .&gt; UC1 : &lt;&lt;extend&gt;&gt;\nUC6 .&gt; UC5 : &lt;&lt;extend&gt;&gt;\n\nUC1 --&gt; UC4 : sau khi duyệt\nUC4 --&gt; UC5 : hàng về kho\nUC5 --&gt; UC7 : đạt kiểm định\n\nnote right of UC2\n  Quy tắc:\n  - Trong vòng 7 ngày\n  - Có video bóc hàng\nend note\n\nnote right of UC6\n  Edge case:\n  - Hàng giả / bị tráo\n  - Hư hỏng nặng do Shipper\nend note\n\n@enduml\n&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="_ZrnDOn3iqJ4LTwDehKR-34">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
+            <mxGeometry as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Phân hệ Đổi trả &amp; Hoàn tiền (Refund)" plantUmlId="rect_0" plantUmlBaseStyle="swimlane;collapsible=0;startSize=26;fillColor=none;strokeColor=#181818;fontColor=#000000;fontSize=13;fontStyle=1;whiteSpace=wrap;" plantUmlBaseValue="Phân hệ Đổi trả &amp; Hoàn tiền (Refund)" id="_ZrnDOn3iqJ4LTwDehKR-35">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-34" style="swimlane;collapsible=0;startSize=26;fillColor=none;strokeColor=#181818;fontColor=#000000;fontSize=13;fontStyle=1;whiteSpace=wrap;" vertex="1">
+            <mxGeometry height="394" width="791" x="200.5" y="52" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="UC1: Tạo yêu cầu&lt;br&gt;hoàn tiền" plantUmlId="uc_1" plantUmlBaseStyle="ellipse;html=1;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;fontColor=#000000;fontSize=14;" plantUmlBaseValue="UC1: Tạo yêu cầu&lt;br&gt;hoàn tiền" id="_ZrnDOn3iqJ4LTwDehKR-36">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-35" style="ellipse;html=1;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="52" width="176" x="50" y="46" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="UC2: Kiểm tra điều kiện&lt;br&gt;đổi trả" plantUmlId="uc_2" plantUmlBaseStyle="ellipse;html=1;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;fontColor=#000000;fontSize=14;" plantUmlBaseValue="UC2: Kiểm tra điều kiện&lt;br&gt;đổi trả" id="_ZrnDOn3iqJ4LTwDehKR-37">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-35" style="ellipse;html=1;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="52" width="236" x="329.5" y="46" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="UC3: Từ chối&lt;br&gt;yêu cầu" plantUmlId="uc_3" plantUmlBaseStyle="ellipse;html=1;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;fontColor=#000000;fontSize=14;" plantUmlBaseValue="UC3: Từ chối&lt;br&gt;yêu cầu" id="_ZrnDOn3iqJ4LTwDehKR-38">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-35" style="ellipse;html=1;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="52" width="130" x="73" y="230" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="UC6: Xử lý tranh chấp&lt;br&gt;(hàng giả / hư hỏng)" plantUmlId="uc_4" plantUmlBaseStyle="ellipse;html=1;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;fontColor=#000000;fontSize=14;" plantUmlBaseValue="UC6: Xử lý tranh chấp&lt;br&gt;(hàng giả / hư hỏng)" id="_ZrnDOn3iqJ4LTwDehKR-39">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-35" style="ellipse;html=1;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="52" width="217" x="29.5" y="322" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="UC4: Điều phối&lt;br&gt;thu hồi hàng" plantUmlId="uc_5" plantUmlBaseStyle="ellipse;html=1;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;fontColor=#000000;fontSize=14;" plantUmlBaseValue="UC4: Điều phối&lt;br&gt;thu hồi hàng" id="_ZrnDOn3iqJ4LTwDehKR-40">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-35" style="ellipse;html=1;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="52" width="145" x="229.5" y="132" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="UC5: Kiểm định&lt;br&gt;hàng hoàn kho" plantUmlId="uc_6" plantUmlBaseStyle="ellipse;html=1;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;fontColor=#000000;fontSize=14;" plantUmlBaseValue="UC5: Kiểm định&lt;br&gt;hàng hoàn kho" id="_ZrnDOn3iqJ4LTwDehKR-41">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-35" style="ellipse;html=1;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="52" width="158" x="471" y="184" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="UC7: Xử lý&lt;br&gt;hoàn tiền" plantUmlId="uc_7" plantUmlBaseStyle="ellipse;html=1;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;fontColor=#000000;fontSize=14;" plantUmlBaseValue="UC7: Xử lý&lt;br&gt;hoàn tiền" id="_ZrnDOn3iqJ4LTwDehKR-42">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-35" style="ellipse;html=1;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="52" width="107" x="639.5" y="298" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="«include»" plantUmlId="rel_21" plantUmlBaseStyle="endArrow=open;dashed=1;dashPattern=5 5;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="«include»" id="_ZrnDOn3iqJ4LTwDehKR-56">
+          <mxCell edge="1" parent="_ZrnDOn3iqJ4LTwDehKR-35" source="_ZrnDOn3iqJ4LTwDehKR-36" style="endArrow=open;dashed=1;dashPattern=5 5;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="_ZrnDOn3iqJ4LTwDehKR-37">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="«extend»" plantUmlId="rel_22" plantUmlBaseStyle="endArrow=open;dashed=1;dashPattern=5 5;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="«extend»" id="_ZrnDOn3iqJ4LTwDehKR-57">
+          <mxCell edge="1" parent="_ZrnDOn3iqJ4LTwDehKR-35" source="_ZrnDOn3iqJ4LTwDehKR-38" style="endArrow=open;dashed=1;dashPattern=5 5;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="_ZrnDOn3iqJ4LTwDehKR-36">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="sau khi duyệt" plantUmlId="rel_24" plantUmlBaseStyle="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="sau khi duyệt" id="_ZrnDOn3iqJ4LTwDehKR-59">
+          <mxCell edge="1" parent="_ZrnDOn3iqJ4LTwDehKR-35" source="_ZrnDOn3iqJ4LTwDehKR-36" style="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="_ZrnDOn3iqJ4LTwDehKR-40">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="«extend»" plantUmlId="rel_23" plantUmlBaseStyle="endArrow=open;dashed=1;dashPattern=5 5;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="«extend»" id="_ZrnDOn3iqJ4LTwDehKR-58">
+          <mxCell edge="1" parent="_ZrnDOn3iqJ4LTwDehKR-35" source="_ZrnDOn3iqJ4LTwDehKR-39" style="endArrow=open;dashed=1;dashPattern=5 5;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="_ZrnDOn3iqJ4LTwDehKR-41">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="hàng về kho" plantUmlId="rel_25" plantUmlBaseStyle="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="hàng về kho" id="_ZrnDOn3iqJ4LTwDehKR-60">
+          <mxCell edge="1" parent="_ZrnDOn3iqJ4LTwDehKR-35" source="_ZrnDOn3iqJ4LTwDehKR-40" style="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="_ZrnDOn3iqJ4LTwDehKR-41">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="đạt kiểm định" plantUmlId="rel_26" plantUmlBaseStyle="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="đạt kiểm định" id="_ZrnDOn3iqJ4LTwDehKR-61">
+          <mxCell edge="1" parent="_ZrnDOn3iqJ4LTwDehKR-35" source="_ZrnDOn3iqJ4LTwDehKR-41" style="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="_ZrnDOn3iqJ4LTwDehKR-42">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="actor_8" plantUmlBaseStyle="shape=umlActor;html=1;fillColor=#F1F1F1;strokeColor=#181818;fontColor=#000000;fontSize=14;" plantUmlBaseValue="" id="_ZrnDOn3iqJ4LTwDehKR-43">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-34" style="shape=umlActor;html=1;fillColor=#F1F1F1;strokeColor=#181818;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="60" width="40" x="80.5" y="85" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Khách hàng" plantUmlId="actorlbl_9" plantUmlBaseStyle="text;html=1;align=center;verticalAlign=top;fontColor=#000000;fontSize=14;" plantUmlBaseValue="Khách hàng" id="_ZrnDOn3iqJ4LTwDehKR-44">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-34" style="text;html=1;align=center;verticalAlign=top;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="17" width="87" x="57" y="147" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="actor_10" plantUmlBaseStyle="shape=umlActor;html=1;fillColor=#F1F1F1;strokeColor=#181818;fontColor=#000000;fontSize=14;" plantUmlBaseValue="" id="_ZrnDOn3iqJ4LTwDehKR-45">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-34" style="shape=umlActor;html=1;fillColor=#F1F1F1;strokeColor=#181818;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="60" width="40" x="80.5" y="223" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Shipper" plantUmlId="actorlbl_11" plantUmlBaseStyle="text;html=1;align=center;verticalAlign=top;fontColor=#000000;fontSize=14;" plantUmlBaseValue="Shipper" id="_ZrnDOn3iqJ4LTwDehKR-46">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-34" style="text;html=1;align=center;verticalAlign=top;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="17" width="60" x="70.5" y="285" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="actor_12" plantUmlBaseStyle="shape=umlActor;html=1;fillColor=#F1F1F1;strokeColor=#181818;fontColor=#000000;fontSize=14;" plantUmlBaseValue="" id="_ZrnDOn3iqJ4LTwDehKR-47">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-34" style="shape=umlActor;html=1;fillColor=#F1F1F1;strokeColor=#181818;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="60" width="40" x="80.5" y="314" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NV kiểm định kho" plantUmlId="actorlbl_13" plantUmlBaseStyle="text;html=1;align=center;verticalAlign=top;fontColor=#000000;fontSize=14;" plantUmlBaseValue="NV kiểm định kho" id="_ZrnDOn3iqJ4LTwDehKR-48">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-34" style="text;html=1;align=center;verticalAlign=top;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="17" width="132" x="34.5" y="376" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="actor_14" plantUmlBaseStyle="shape=umlActor;html=1;fillColor=#F1F1F1;strokeColor=#181818;fontColor=#000000;fontSize=14;" plantUmlBaseValue="" id="_ZrnDOn3iqJ4LTwDehKR-49">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-34" style="shape=umlActor;html=1;fillColor=#F1F1F1;strokeColor=#181818;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="60" width="40" x="80.5" y="405" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NV CSKH / Kế toán" plantUmlId="actorlbl_15" plantUmlBaseStyle="text;html=1;align=center;verticalAlign=top;fontColor=#000000;fontSize=14;" plantUmlBaseValue="NV CSKH / Kế toán" id="_ZrnDOn3iqJ4LTwDehKR-50">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-34" style="text;html=1;align=center;verticalAlign=top;fontColor=#000000;fontSize=14;" vertex="1">
+            <mxGeometry height="17" width="141" x="30" y="467" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="rel_16" plantUmlBaseStyle="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="_ZrnDOn3iqJ4LTwDehKR-51">
+          <mxCell edge="1" parent="_ZrnDOn3iqJ4LTwDehKR-34" source="_ZrnDOn3iqJ4LTwDehKR-43" style="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="_ZrnDOn3iqJ4LTwDehKR-36">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="rel_17" plantUmlBaseStyle="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="_ZrnDOn3iqJ4LTwDehKR-52">
+          <mxCell edge="1" parent="_ZrnDOn3iqJ4LTwDehKR-34" source="_ZrnDOn3iqJ4LTwDehKR-45" style="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="_ZrnDOn3iqJ4LTwDehKR-40">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="rel_18" plantUmlBaseStyle="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="_ZrnDOn3iqJ4LTwDehKR-53">
+          <mxCell edge="1" parent="_ZrnDOn3iqJ4LTwDehKR-34" source="_ZrnDOn3iqJ4LTwDehKR-47" style="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="_ZrnDOn3iqJ4LTwDehKR-41">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="rel_19" plantUmlBaseStyle="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="_ZrnDOn3iqJ4LTwDehKR-54">
+          <mxCell edge="1" parent="_ZrnDOn3iqJ4LTwDehKR-34" source="_ZrnDOn3iqJ4LTwDehKR-49" style="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="_ZrnDOn3iqJ4LTwDehKR-38">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="rel_20" plantUmlBaseStyle="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="_ZrnDOn3iqJ4LTwDehKR-55">
+          <mxCell edge="1" parent="_ZrnDOn3iqJ4LTwDehKR-34" source="_ZrnDOn3iqJ4LTwDehKR-49" style="endArrow=block;endFill=1;strokeColor=#181818;fontColor=#000000;fontSize=11;edgeStyle=none;rounded=0;html=1;curved=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="_ZrnDOn3iqJ4LTwDehKR-42">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Quy tắc:&#xa;- Trong vòng 7 ngày&#xa;- Có video bóc hàng" plantUmlId="note_27" plantUmlBaseStyle="shape=note;size=10;fillColor=#FEFFDD;strokeColor=#181818;fontSize=13;whiteSpace=wrap;align=left;" plantUmlBaseValue="Quy tắc:&#xa;- Trong vòng 7 ngày&#xa;- Có video bóc hàng" id="_ZrnDOn3iqJ4LTwDehKR-62">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-34" style="shape=note;size=10;fillColor=#FEFFDD;strokeColor=#181818;fontSize=13;whiteSpace=wrap;align=left;" vertex="1">
+            <mxGeometry height="56" width="151" x="1080" y="108" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Edge case:&#xa;- Hàng giả / bị tráo&#xa;- Hư hỏng nặng do Shipper" plantUmlId="note_29" plantUmlBaseStyle="shape=note;size=10;fillColor=#FEFFDD;strokeColor=#181818;fontSize=13;whiteSpace=wrap;align=left;" plantUmlBaseValue="Edge case:&#xa;- Hàng giả / bị tráo&#xa;- Hư hỏng nặng do Shipper" id="_ZrnDOn3iqJ4LTwDehKR-64">
+          <mxCell parent="_ZrnDOn3iqJ4LTwDehKR-34" style="shape=note;size=10;fillColor=#FEFFDD;strokeColor=#181818;fontSize=13;whiteSpace=wrap;align=left;" vertex="1">
+            <mxGeometry height="56" width="192" x="1070" y="349" as="geometry" />
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
